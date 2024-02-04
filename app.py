@@ -82,13 +82,12 @@ def main():
 
     # User input: PDF file upload
     # For demo, always run this
+    resume_summary = None
     if uploaded_file := st.file_uploader("Upload a PDF resume", type=["pdf"]):
         # Produce a summary of the resume and a query engine for the resume information if available
         # parsed_documents = llamaparse_text_from_pdf(uploaded_file)
         # resume_query_engine = create_resume_query_engine(parsed_documents, "jobo_resume")
         resume_summary = resume_response
-    else:
-        resume_summary = None
 
     # User input: Keywords
     if keywords := st.text_input("Enter job search query:"):
